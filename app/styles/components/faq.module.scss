@@ -1,0 +1,79 @@
+@use "../variables" as *;
+
+.faqSection {
+    width: auto;
+    // Supprimer la hauteur fixe (height: 962px) pour laisser le contenu déterminer la taille
+    // height: 962px; 
+    padding: 0 80px; // Appliquer le padding horizontal global ici
+    background-color: $color-white;
+}
+
+/* --- STYLE DU TITRE PRINCIPAL --- */
+
+.mainTitle {
+    // Simplification de l'alignement et des marges
+    width: auto; 
+    text-align: left; // Le titre s'aligne à gauche
+    padding-top: 114px;
+    padding-bottom: 88px; // Ajout d'un espace en bas du titre
+    padding-left: 80px;
+    // Styles de police
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: $font-size-h1;
+    line-height: 90px;
+    text-transform: uppercase;
+}
+
+.redBackground {
+    // C'est la clé pour que le fond rouge soit un bloc parfait
+    display: inline-block;
+    background-color: $color-secondary;
+    color: $color-white;
+    // Padding pour créer l'espace rouge autour du texte
+    padding: 0 15px; 
+    margin-right: 15px; // Espace entre le bloc rouge et le reste du titre
+}
+
+/* --- STYLE DES QUESTIONS (FAQ ITEMS) --- */
+
+.faqContainer {
+    // Retirer le padding-top car il est géré par le padding-bottom du .mainTitle
+    width: auto; 
+    max-width: 1280px; // Fixer la largeur maximale du contenu
+}
+
+.faqItem {
+    // CORRECTION : Utiliser display: flex pour aligner la question et l'icône !
+    display: flex; 
+    justify-content: space-between; // Repousse la question et l'icône aux extrémités
+    align-items: center; // Alignement vertical parfait
+    
+    // Padding vertical pour la zone de clic (définit la hauteur de la ligne)
+    padding: 30px 0;
+    
+    // Ligne de séparation fine (bordure inférieure)
+    border-bottom: 1px solid #E0E0E0; 
+}
+
+.questionText {
+    // Retirer tous les paddings pour laisser .faqItem gérer l'espacement
+    padding: 0; 
+    margin: 0; // Réinitialisation des marges par défaut du <h3>
+    
+    // Styles de police (OK)
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: $font-size-h3;
+    line-height: 34px;
+    text-transform: uppercase;
+    
+    // Permet au texte de prendre l'espace disponible mais s'arrête avant l'icône
+    flex-grow: 1; 
+    margin-right: 20px; // Ajoute un espace avant l'icône
+}
+
+.iconContainer {
+    // Empêche l'icône de se déformer ou de prendre de l'espace inutile
+    flex-shrink: 0;
+} 

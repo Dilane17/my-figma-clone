@@ -1,0 +1,119 @@
+@use "../variables" as *;
+.client {
+    width: auto;
+    height: 872px;
+
+}
+.title {
+    width: auto;
+    height: 90px;
+    margin-top: 128px;
+   
+
+}
+
+.h1 {
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: $font-size-h1;
+    line-height: 90px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+.red {
+    background-color: $color-secondary;
+    color: $color-white;
+}
+.row {
+    display: flex;
+    width: 1184px;
+    height: 416px;
+    margin: 110px 128px 128px 128px;
+}
+.imageContainer {
+    background-image: url("/assets/client-Image.png");
+    width: 507.4200134277344px;
+    height: 416px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+
+}
+.description {
+    width: 676.5800170898438px;
+    height: 416px;
+    background-color: $color-primary;
+    color: $color-accent;
+
+}
+.h3 {
+    width: 548.5800170898438;
+    height: 68;
+    margin-top: 48px;
+    margin-left: 64px;
+
+}
+.h3Content {
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: $font-size-h3;
+    line-height: 34px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+}
+.paragraph {
+    width: 546.969970703125px;
+    height: 106px;
+    margin-top: 43px;
+    margin-left: 64px;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: $font-size-base;
+    line-height: 27px;
+    letter-spacing: 0%;
+
+}
+.clientFooter {
+    display: flex;
+    margin-left: 64px;
+    margin-top: 33px;
+    gap: 50px;
+}
+
+.loginButton {
+    background-color: $color-secondary;
+    width: 293.2799987792969px;
+    height: 70px;
+    font-family: $font-tertiary;
+    font-weight: 600;
+    font-size: $font-size-base;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    padding-left: 55px;
+    padding-top: 13px;
+    display: flex;
+    gap: 38px;
+}
+.bal {
+    width: 20px;
+    height: 40px;
+    padding-top: 15px;
+    margin-right: 55px;
+    align-items: center;
+}
+.lineVertical {
+    width: 0.9200000166893005px;
+    height: 70px;
+    background-color: $color-accent;
+
+}
+.logo {
+    width: 214.3800048828125px;
+    height: 44.33000183105469px;
+    padding-top: 12.83px;
+    margin-right: 63px;
+}

@@ -1,0 +1,107 @@
+@use "../variables" as *;
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 810px;
+  opacity: 1;
+  background-color: $color-primary;
+  color: $color-white;
+  display: flex;
+}
+
+.headerContent {
+  position: relative;
+}
+
+.h1 {
+  width: 772px;
+  height: 172px;
+  opacity: 1;
+  margin-top: 81px;
+  margin-left: 46px;
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: $font-size-h1;
+  line-height: 80px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.description {
+  width: 547px;
+  height: 106px;
+  opacity: 1;
+  margin-top: 25px;
+  padding-left: 90px;
+  font-family: $font-primary;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: $font-size-base;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.loginButton {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  opacity: 1;
+  margin-top: 49px;
+  /* removed large left margin: spacing is handled by .cta */
+  margin-left: 90px;
+  background-color: $color-secondary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-primary;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $color-white;
+  
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between login button and ratings (10-15px desired) */
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* small space; icons will slightly overlap using negative margin */
+  padding-left: 20px;
+}
+
+.ratings img,
+.ratings :global(img) {
+  /* make icons slightly overlapping like Audi rings */
+  margin-left: -19px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  margin-top: 40px;
+}
+
+.avis {
+  margin-left: 8px;
+  font-size: 14px;
+  align-items: center;
+}
+.avisContainer {
+  display: flex;
+  align-items: center;
+  width: 146px;
+  margin-top: 50px;
+}
+.star {
+  width: auto;
+  height: 50px;
+  flex-shrink: 0;
+}

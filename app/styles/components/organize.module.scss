@@ -1,0 +1,139 @@
+@use "../variables" as *;
+
+.organize {
+    width: auto;
+    height: 1097px;
+    background-color: $color-background;
+}
+
+.title {
+    width: 1184px;
+    height: 180px;
+    padding-top: 128px;
+    padding-left: 128px;
+    margin-bottom: 110px;
+
+}
+
+.h1 {
+    padding-top: -14px;
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: $font-size-h1;
+    line-height: 90px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.red {
+    display: inline-block;
+    background-color: $color-secondary;
+    padding: 0 10px;
+}
+
+.white {
+    color: $color-white;
+}
+
+.row {
+    display: flex;
+    padding-top: 110px;
+}
+
+.imageContainer {
+    background-image: url("/assets/organize.png");
+    background-size: cover;
+    background-position: center;
+    width: 507px;
+    height: 551px;
+    opacity: 1;
+    flex-shrink: 0;
+    margin: 0 0 0 128px;
+}
+
+.description {
+    width: 676px;
+    height: 551px;
+    background-color: $color-primary;
+    color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-right: 128px;
+}
+.h3 {
+    width: 548px;
+    height: 68px;
+    margin: 40px 64px;
+
+}
+.h3Content {
+    width: 546px;
+    height: 79px;
+    padding-top: -6px;
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: $font-size-h3;
+    line-height: 34px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+}
+
+.paragraph {
+    width: 546px;
+    height: 106px;
+    margin-top: -23px;
+    margin-left: 64px;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: $font-size-base;
+    line-height: 27px;
+    letter-spacing: 0%;
+}
+
+.organizeFooter {
+    display: flex;
+    margin-left: 64px;
+    margin-bottom: 50px;
+    gap: 15px;
+    align-items: center;
+}
+
+.loginButton {
+    width: 300px;
+    height: 70px;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-tertiary;
+    font-weight: 600;
+    font-size: $font-size-base;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $color-white;
+    padding-left: 55px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-right: 10px;
+}
+
+.bal {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.lineVertical {
+    width: 0.92px;
+    height: 70px;
+    background-color: $color-white;
+    align-items: center;
+}
+
+.logo {
+    width: 214px;
+    height: 48px;
+    
+}

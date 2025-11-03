@@ -1,0 +1,108 @@
+@use "../variables" as *;
+.stepsSection {
+    width: auto;
+    height: 1234px;
+    display: flex;
+    padding: 64px 80px 112px 80px ;
+    background-color: $color-primary;
+}
+
+.introContent {
+    position: sticky;
+    top: 0;
+    width: 405px;
+    height: 396px;
+    color: $color-white;
+    padding-right: 64px;
+}
+
+.mainTitle {
+    width: 405px;
+    height: 180px;
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 90px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+}
+
+.introText {
+    width: 370px;
+    height: 106px;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: $font-size-base;
+    line-height: 27px;
+    letter-spacing: 0%;
+    margin-top: 27px;
+    margin-right: 34px;
+    margin-bottom: 33px ;
+}
+
+.ctaButton {
+    width: 282px;
+    height: 50px;
+    background-color: $color-secondary;
+    font-family: $font-tertiary;
+    font-weight: 600;
+    font-size: $font-size-base;
+    line-height: 20px;
+    letter-spacing: 0%;
+    align-items: center;
+    text-transform: uppercase;
+    display: inline-flex;
+    padding-left: 50px;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-bottom: 112px;
+}
+
+.card {
+    width: 389px;
+    height: 526px;
+    background-color: $color-accent;
+    
+}
+
+.iconContainer {
+    background-color: $color-secondary;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    margin-top: 55px;
+    margin-left: 50px;
+    border-radius: 10px;
+}
+
+.cardTitle {
+    width: 289px;
+    height: 68px;
+    margin-left: 50px;
+    margin-top: 32px;
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: $font-size-h3;
+    line-height: 34px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    
+
+}
+
+.cardDescription {
+    width: 288px;
+    height: 268px;
+    margin-top: 19px;
+    margin-left: 50px;
+}
+
+.space {
+    padding-bottom: 29px;
+
+}

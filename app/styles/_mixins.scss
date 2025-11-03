@@ -1,0 +1,23 @@
+// Centre un élément horizontalement
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// conteneur max-width
+@mixin container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Police de base
+@mixin text-style($size: $font-size-base, $color: $color-text-dark, $weight: 400) {
+    font-family: $font-primary, sans-serif;
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    line-height: 1.6;
+}
