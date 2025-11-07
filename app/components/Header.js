@@ -22,7 +22,7 @@ export default function Header() {
             <Image src="/assets/bal.svg" alt="ballon" width={12} height={12} />
           </Link>
           <div className={styles.ratings}>
-            <Image src="/assets/rating.png" alt="User" width={10} height={10} />
+            <Image src="/assets/rating.png" alt="User" width={44} height={44} />
             <Image
               src="/assets/rating1.png"
               alt="User"

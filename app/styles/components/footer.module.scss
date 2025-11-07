@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins";
 
 .footer {
   // Fond général
@@ -203,15 +204,119 @@
   z-index: 20; /* Au-dessus du mainContent (z-index:10) */
 }
 .baniereContent {
-    font-family: $font-primary;
-    font-weight: 400;
-    font-size: $font-size-base;
-    line-height: 20px;
-    letter-spacing: 0%;
-
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: $font-size-base;
+  line-height: 20px;
+  letter-spacing: 0%;
 }
 .gras {
+  font-weight: 700;
+}
 
-    font-weight: 700;
+@include mixins.mobile {
+  .footer {
+    /* remove large horizontal padding so full-bleed elements can span */
+    padding: 0 12px;
+    overflow: visible; /* allow full-bleed banner to show */
+    height: auto;
+  }
 
+  /* Make the red banner truly full-bleed on mobile */
+  .redBaniere {
+    left: 0;
+    transform: none;
+    width: 100%;
+    /* add a slightly larger top offset so it doesn't overlap the section title */
+    top: 0px;
+    bottom: 20px;
+  }
+
+  /* Stack the three columns vertically */
+  .mainContent {
+    flex-direction: column;
+    align-items: flex-start;
+    /* Add extra top padding so the red banner doesn't overlap the main title */
+    padding-top: 92px;
+    padding-bottom: 32px;
+    gap: 24px;
+  }
+
+  /* Newsletter: form fields full-width */
+  .newsletter {
+    width: 100%;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .emailInput {
+      width: 100%;
+      flex-grow: 0;
+    }
+
+    .submitButton {
+      width: 100%;
+    }
+  }
+
+  /* Nav and social become full width (stacked) */
+  .navColumn,
+  .socialColumn {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .footerNav,
+  .socialLinks {
+    margin-top: 12px;
+  }
+
+  /* Align social icons horizontally on mobile */
+  .socialLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+
+    a {
+      margin-bottom: 0;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  /* Hide or strongly reduce the giant background logo on mobile */
+  .logoGiant {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 290px; /* reduced size for mobile */
+    height: auto;
+    padding-top: 50px;
+  
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Legal info stacked vertically */
+  .legalInfo {
+    margin-top: 140px; /* make room for the decorative logo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Ensure banner text has comfortable padding on small screens */
+  .baniereContent {
+    padding: 0 12px;
+    font-size: 14px;
+  }
 }

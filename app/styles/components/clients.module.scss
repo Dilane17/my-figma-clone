@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins" ;
 .client {
     width: auto;
     height: 872px;
@@ -116,4 +117,88 @@
     height: 44.33000183105469px;
     padding-top: 12.83px;
     margin-right: 63px;
+}
+
+@include mixins.mobile {
+    .client {
+        height: auto; // Laisser le contenu définir la hauteur
+        padding: 0 20px 40px 20px; // Padding latéral et bas pour mobile
+    }
+    
+    /* 1. Titre */
+    .title {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .h1 {
+        font-size: 40px;
+        line-height: 44px;
+        text-align: left;
+    }
+
+    /* 2. Ligne (Passage en colonne) */
+    .row {
+        flex-direction: column-reverse; // ⬅️ Empile la Description puis l'Image (car l'Image est en premier dans le JSX)
+        width: 100%;
+        height: auto;
+        margin: 20px 0 0 0; // Suppression des marges fixes
+    }
+
+    /* 3. Colonne Image */
+    .imageContainer {
+        width: 100%;
+        height: 260px; // Hauteur réduite pour mobile
+        margin: 0;
+        margin-bottom: 20px; // Espace entre l'image et la description
+    }
+    
+    /* 4. Colonne Description */
+    .description {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        
+        // Rendre tous les éléments internes responsifs
+        .h3, .paragraph {
+            width: 100%;
+            margin-left: 0;
+        }
+        .h3Content {
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .paragraph {
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 20px;
+        }
+    }
+    
+    /* 5. Footer (Bouton + Logo) */
+    .clientFooter {
+        flex-direction: column; // Empile le bouton et le logo
+        margin-left: 0;
+        margin-top: 20px;
+        gap: 15px;
+        align-items: center;
+        
+        // S'assurer que le bouton prend toute la largeur
+        .loginButton {
+            width: 100%;
+            height: auto;
+            padding: 14px 18px;
+            justify-content: center;
+            padding-left: 0;
+        }
+        .lineVertical {
+            display: none; // Masquer la ligne de séparation verticale
+        }
+        .logo {
+            width: 160px; // Réduction de la taille du logo
+            height: auto;
+            margin-right: 0;
+        }
+    }
 }

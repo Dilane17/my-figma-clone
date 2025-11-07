@@ -21,3 +21,23 @@
     font-weight: $weight;
     line-height: 1.6;
 }
+
+// --- Points de Rupture (Breakpoints) ---
+$breakpoint-tablet: 1024px;
+// ⬅️ Changement à 600px pour une meilleure gestion des mobiles
+$breakpoint-mobile: 600px; 
+
+
+@mixin tablet {
+  // S'applique aux écrans de 1024px et moins
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  // S'applique aux écrans de 600px et moins
+  @media (max-width: $breakpoint-mobile) {
+    @content; 
+  }
+}

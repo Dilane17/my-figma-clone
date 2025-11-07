@@ -23,12 +23,12 @@ export default function Home() {
         <About />
         <Data />
         <Organize />
-        <StepsSection />
         <Clients />
+        <StepsSection />
         <AboutUsSection />
         <FaqSection />
         <CtaSection />
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );

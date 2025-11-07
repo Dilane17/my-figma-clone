@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins";
 
 .banner {
   position: relative;
@@ -7,10 +8,10 @@
   box-shadow: 0px 15px 20px 0px #1b1b1d0d;
   background-color: $color-primary;
   color: $color-white;
+  // Utiliser flex pour centrer le contenu
   display: flex;
-  justify-content: space-between;
+  justify-content: center; 
   align-items: center;
-  /*overflow: hidden;*/
 }
 
 .bannerContent {
@@ -33,7 +34,7 @@
   .nav {
     display: flex;
     gap: 20px;
-    font-family: Oswald;
+    font-family: var(--font-oswald);
     font-weight: 600;
     font-size: $font-size-base;
     line-height: 20px;
@@ -49,7 +50,7 @@
   .login {
     min-width: 200px;
     height: 50px;
-    font-family: Outfit;
+    font-family: var(--font-outfit);
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -61,6 +62,11 @@
     align-items: center;
     gap: 10px;
   }
+}
+
+// Masqué par défaut (desktop)
+.mobileNav {
+  display: none;
 }
 
 .bannerImage {
@@ -79,3 +85,92 @@
   pointer-events: none;
   flex-shrink: 0;
 }
+
+/* --- MOBILE STYLES (Appareils <= 480px) --- */
+@include mixins.mobile {
+  .banner {
+    // Adapter la hauteur pour le mobile si nécessaire
+    height: 60px;
+  }
+    
+  .bannerContent {
+    padding: 12px 16px; // Réduire le padding sur mobile
+    height: auto;
+      
+    // Masquer les éléments desktop en ciblant directement les sélecteurs
+    .nav, .login {
+        display: none !important; 
+    }
+  }
+  
+  // Afficher le menu hamburger
+  .mobileNav {
+    display: block; // Rends visible le conteneur du hamburger
+    position: relative;
+    z-index: 30;
+  }
+
+  .hamburger {
+    display: inline-flex;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+  }
+
+  .hamburgerBox {
+    width: 22px;
+    height: 16px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburgerInner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $color-white;
+    transform: translateY(-50%);
+    box-shadow: 0 -6px 0 0 $color-white, 0 6px 0 0 $color-white;
+  }
+
+  .mobileMenu {
+    // Utiliser position: fixed pour que le menu s'ouvre au-dessus du reste du site
+    position: fixed; 
+    top: 60px; 
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Permet de prendre toute la hauteur pour l'effet overlay */
+    background: $color-primary;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    z-index: 120;
+    box-sizing: border-box;
+    text-align: center;
+    
+    // S'assurer que les liens sont bien stylisés
+    a {
+        padding: 10px 0;
+        font-size: 20px;
+        font-family: var(--font-oswald);
+    }
+  }
+
+  .mobileMenu.open {
+    display: flex;
+  }
+
+
+  .bannerImage {
+    display: none;
+  }
+}
+
+

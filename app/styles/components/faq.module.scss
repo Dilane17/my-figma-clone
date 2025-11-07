@@ -1,5 +1,5 @@
 @use "../variables" as *;
-
+@use "../mixins";
 .faqSection {
     width: auto;
     // Supprimer la hauteur fixe (height: 962px) pour laisser le contenu déterminer la taille
@@ -77,3 +77,32 @@
     // Empêche l'icône de se déformer ou de prendre de l'espace inutile
     flex-shrink: 0;
 } 
+
+@include mixins.mobile {
+    .faqSection {
+        padding: 0 20px; /* Réduction du padding latéral */
+    }
+
+    /* 1. Titre */
+    .mainTitle {
+        padding-top: 50px;
+        padding-bottom: 40px;
+        padding-left: 0; // Supprimer le padding gauche fixe
+        
+        font-size: 40px; // Réduction de la taille de police
+        line-height: 44px;
+    }
+    
+    /* 2. Questions */
+    .faqItem {
+        padding: 20px 0; // Padding vertical réduit
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .questionText {
+        font-size: 16px; // Réduction de la taille de police
+        line-height: 22px;
+        margin-right: 10px;
+    }
+}

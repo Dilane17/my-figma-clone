@@ -1,108 +1,188 @@
 @use "../variables" as *;
+@use "../mixins";
 .stepsSection {
-    width: auto;
-    height: 1234px;
-    display: flex;
-    padding: 64px 80px 112px 80px ;
-    background-color: $color-primary;
+  width: auto;
+  height: 1234px;
+  display: flex;
+  padding: 64px 80px 112px 80px;
+  background-color: $color-primary;
 }
 
 .introContent {
-    position: sticky;
-    top: 0;
-    width: 405px;
-    height: 396px;
-    color: $color-white;
-    padding-right: 64px;
+  position: sticky;
+  top: 0;
+  width: 405px;
+  height: 396px;
+  color: $color-white;
+  padding-right: 64px;
 }
 
 .mainTitle {
-    width: 405px;
-    height: 180px;
-    font-family: $font-secondary;
-    font-weight: 600;
-    font-size: 70px;
-    line-height: 90px;
-    letter-spacing: 0%;
-    text-transform: uppercase;
-
+  width: 405px;
+  height: 180px;
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 90px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
 }
 
 .introText {
-    width: 370px;
-    height: 106px;
-    font-family: $font-primary;
-    font-weight: 400;
-    font-size: $font-size-base;
-    line-height: 27px;
-    letter-spacing: 0%;
-    margin-top: 27px;
-    margin-right: 34px;
-    margin-bottom: 33px ;
+  width: 370px;
+  height: 106px;
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: $font-size-base;
+  line-height: 27px;
+  letter-spacing: 0%;
+  margin-top: 27px;
+  margin-right: 34px;
+  margin-bottom: 33px;
 }
 
 .ctaButton {
-    width: 282px;
-    height: 50px;
-    background-color: $color-secondary;
-    font-family: $font-tertiary;
-    font-weight: 600;
-    font-size: $font-size-base;
-    line-height: 20px;
-    letter-spacing: 0%;
-    align-items: center;
-    text-transform: uppercase;
-    display: inline-flex;
-    padding-left: 50px;
+  width: 282px;
+  height: 50px;
+  background-color: $color-secondary;
+  font-family: $font-tertiary;
+  font-weight: 600;
+  font-size: $font-size-base;
+  line-height: 20px;
+  letter-spacing: 0%;
+  align-items: center;
+  text-transform: uppercase;
+  display: inline-flex;
+  padding-left: 50px;
 }
 
 .cardsGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    padding-bottom: 112px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 112px;
 }
 
 .card {
-    width: 389px;
-    height: 526px;
-    background-color: $color-accent;
-    
+  width: 389px;
+  height: 526px;
+  background-color: $color-accent;
+ 
 }
 
 .iconContainer {
-    background-color: $color-secondary;
-    width: 48px;
-    height: 48px;
-    padding: 12px;
-    margin-top: 55px;
-    margin-left: 50px;
-    border-radius: 10px;
+  background-color: $color-secondary;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  margin-top: 55px;
+  margin-left: 50px;
+  border-radius: 10px;
 }
 
 .cardTitle {
-    width: 289px;
-    height: 68px;
-    margin-left: 50px;
-    margin-top: 32px;
-    font-family: $font-secondary;
-    font-weight: 600;
-    font-size: $font-size-h3;
-    line-height: 34px;
-    letter-spacing: 0%;
-    text-transform: uppercase;
-    
-
+  width: 289px;
+  height: 68px;
+  margin-left: 50px;
+  margin-top: 32px;
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-size: $font-size-h3;
+  line-height: 34px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
 }
 
 .cardDescription {
-    width: 288px;
-    height: 268px;
-    margin-top: 19px;
-    margin-left: 50px;
+  width: 288px;
+  height: 268px;
+  margin-top: 19px;
+  margin-left: 50px;
 }
 
 .space {
-    padding-bottom: 29px;
+  padding-bottom: 29px;
+}
 
+@include mixins.mobile {
+  .stepsSection {
+    flex-direction: column; /* Contenu puis Cartes */
+    padding: 28px 16px; /* Padding latéral réduit pour mobile */
+    gap: 24px;
+    height: auto;
+  }
+
+  /* 1. Désactiver l'effet Sticky et revenir au flux normal */
+  .introContent {
+    position: static;
+    height: auto; /* Laisser la hauteur du contenu dicter la taille */
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 24px; /* Espace entre l'intro et les cartes */
+
+    // Rendre les éléments internes responsifs
+    .mainTitle {
+      width: 100%;
+      font-size: 50px;
+      line-height: 70px;
+      text-align: left;
+    }
+    .introText {
+      width: 100%;
+      margin-right: 0;
+    }
+    .ctaButton {
+      width: 100%;
+      justify-content: center;
+      padding-left: 0;
+      margin-top: 16px;
+    }
+  }
+
+  /* 2. Cartes - Passage à 1 colonne */
+  .cardsGrid {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 16px; /* espace entre les cartes */
+    padding-bottom: 16px;
+    width: 100%;
+    background-color: transparent;
+     
+  }
+
+  /* 3. Style de la carte individuelle pour mobile */
+  .card {
+    border-radius: 12px;
+    height: auto;
+    padding: 18px 16px;
+    background-color: $color-accent; /* conserve la couleur accent pour les cartes */
+    color: $color-text-dark;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.12);
+    overflow: hidden;
+
+    /* Espacement interne géré par le padding ; reset marges spécifiques */
+    .iconContainer {
+      margin-top: 8px;
+      margin-left: 0;
+    }
+    .cardTitle {
+      margin-left: 0;
+      margin-top: 12px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+    .cardDescription {
+      margin-left: 0;
+      margin-top: 12px;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    /* Centrer les boutons/links internes si présents */
+    a {
+      display: inline-flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 12px;
+    }
+  }
 }

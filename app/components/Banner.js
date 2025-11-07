@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./../styles/components/banner.module.scss";
+import MobileNav from "./MobileNav";
 
 export default function Banner() {
   return (
@@ -30,6 +31,18 @@ export default function Banner() {
           Rejoindre le club
           <Image src="/assets/bal.svg" alt="ballon" width={12} height={12} />
         </Link>
+
+        {/* Mobile hamburger/menu (hidden on desktop via CSS) */}
+        <MobileNav className={styles.navMobile}
+          links={[
+            { href: "/", label: "Qui sommes nous" },
+            { href: "/", label: "Tarifs" },
+            { href: "/", label: "Comment ça marche" },
+            { href: "/", label: "Faq" },
+            { href: "/", label: "Nous contact" },
+            { href: "/login", label: "Rejoindre le club" },
+          ]}
+        />
       </div>
       <div className={styles.bannerImage}></div>
     </div>
